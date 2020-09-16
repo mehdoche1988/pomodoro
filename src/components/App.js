@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import Break from './Break';
-import Session from './Session';
-import TimeLeft from './TimeLeft';
+import React, { useState, useEffect, useRef } from "react";
+import "./App.css";
+import Break from "./Break";
+import Session from "./Session";
+import TimeLeft from "./TimeLeft";
 
 function App() {
   const audioElement = useRef(null);
-  const [currentSessionType, setCurrentSessionType] = useState('Session'); 
+  const [currentSessionType, setCurrentSessionType] = useState("Session");
   const [intervalId, setIntervalId] = useState(null);
   const [sessionLength, setSessionLength] = useState(60 * 25);
   const [breakLength, setBreakLength] = useState(300);
   const [timeLeft, setTimeLeft] = useState(sessionLength);
-
 
   useEffect(() => {
     setTimeLeft(sessionLength);
@@ -52,18 +51,17 @@ function App() {
       setIntervalId(null);
     } else {
       const newIntervalId = setInterval(() => {
-        setTimeLeft(prevTimeLeft => {
+        setTimeLeft((prevTimeLeft) => {
           const newTimeLeft = prevTimeLeft - 1;
           if (newTimeLeft >= 0) {
             return prevTimeLeft - 1;
           }
           audioElement.current.play();
-          if (currentSessionType === 'Session') {
-            setCurrentSessionType('Break');
+          if (currentSessionType === "Session") {
+            setCurrentSessionType("Break");
             setTimeLeft(breakLength);
-          }
-          else if (currentSessionType === 'Break') {
-            setCurrentSessionType('Session');
+          } else if (currentSessionType === "Break") {
+            setCurrentSessionType("Session");
             setTimeLeft(sessionLength);
           }
         });
@@ -76,11 +74,9 @@ function App() {
     audioElement.current.load();
     clearInterval(intervalId);
     setIntervalId(null);
-    setCurrentSessionType('Session');
+    setCurrentSessionType("Session");
     setSessionLength(60 * 25);
-    // reset the break length to 5 minutes
     setBreakLength(60 * 5);
-    // reset the timer to 25 minutes (initial session length)
     setTimeLeft(60 * 25);
   };
 
@@ -91,22 +87,27 @@ function App() {
         decrementBreakLengthByOneMinute={decrementBreakLengthByOneMinute}
         incrementBreakLengthByOneMinute={incrementBreakLengthByOneMinute}
       />
+      <br/>
+      <button id="reset" onClick={handleResetButtonClick}>
+        Reset
+      </button>
       <TimeLeft
         handleStartStopClick={handleStartStopClick}
-        timerLabel={currentSessionType}
-        startStopButtonLabel={isStarted ? 'Stop' : 'Start'}
+        startStopButtonLabel={isStarted ? "Stop" : "Start"}
         timeLeft={timeLeft}
       />
+
       <Session
         sessionLength={sessionLength}
         decrementSessionLengthByOneMinute={decrementSessionLengthByOneMinute}
         incrementSessionLengthByOneMinute={incrementSessionLengthByOneMinute}
       />
-      <button id="reset" onClick={handleResetButtonClick}>
-        Reset
-      </button>
+
       <audio id="beep" ref={audioElement}>
-        <source src="https://onlineclock.net/audio/options/default.mp3" type="audio/mpeg" />
+        <source
+          src="https://onlineclock.net/audio/options/default.mp3"
+          type="audio/mpeg"
+        />
       </audio>
     </div>
   );

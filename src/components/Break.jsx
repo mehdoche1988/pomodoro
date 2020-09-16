@@ -10,11 +10,11 @@ const Break = ({
   return (
     <div>
       <p id="break-label">Break</p>
-      <p id="break-length">{breakLengthInMinutes}</p>
+      <p id="break-length">{breakLengthInMinutes} min</p>
       <button id="break-decrement" onClick={decrementBreakLengthByOneMinute}>
         -
       </button>
-      <button id="break-increment" onClick={incrementBreakLengthByOneMinute}>
+      <button id="break-increment"  onClick={incrementBreakLengthByOneMinute}>
         +
       </button>
     </div>

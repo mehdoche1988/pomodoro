@@ -10,7 +10,7 @@ const Session = ({
   return (
     <div>
       <p id="session-label">Session</p>
-      <p id="session-length">{sessionLengthInMinutes}</p>
+      <p id="session-length">{sessionLengthInMinutes} min</p>
       <button id="session-decrement" onClick={decrementSessionLengthByOneMinute}>
         -
       </button>

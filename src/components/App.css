@@ -1,102 +1,101 @@
 body {
-    font-family: 'Robot', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-  }
+  font-family: "Robot", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+#app {
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.title {
+  color: black;
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.clock-control {
+  display: inline-block;
+  width: 150px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #3498db;
+  border-bottom: 5px solid #2980b9;
+}
+.clock-btn {
+  display: inline-block;
+  color: #fff;
+  margin: 8px 0px 4px 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333;
+  box-shadow: inset 5px 5px 15px rgba(150, 150, 150, 0.5),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.7);
+  -webkit-transition: box-shadow 0.15s;
+  -moz-transition: box-shadow 0.15s;
+  -ms-transition: box-shadow 0.15s;
+  transition: box-shadow 0.15s;
+  outline: none;
+  cursor: pointer;
+}
+.clock-time {
+  display: inline-block;
+  width: 50px;
+}
+
+.timer {
+  position: relative;
+  padding: 5px;
+  margin: 10px;
+  color: #fff;
+  background: #222222;
+  border-radius: 10px;
+  border-bottom: 5px solid #333;
+}
+#time-left {
+  font-family: "Orbitron", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+}
+.timer-btn {
+  width: 90px;
+  height: 30px;
+  border-radius: 40px;
+  margin: 10px;
+  color: #fff;
+  text-align: center;
+  background: #333;
+  box-shadow: inset 5px 5px 15px rgba(150, 150, 150, 0.5),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.7);
+  -webkit-transition: box-shadow 0.15s;
+  -moz-transition: box-shadow 0.15s;
+  -ms-transition: box-shadow 0.15s;
+  transition: box-shadow 0.15s;
+  outline: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
   #app {
-    display: flex;
-    height: 95vh;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
   }
-  .title {
-    color:black;
-    margin-bottom: 10px;
-    font-size: 40px;
-    font-weight: 800;
+}
+@media screen and (max-width: 300px) {
+  #app {
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
   }
-  
-  .clock-control {
-    display: inline-block;
-    width: 150px;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    color: #FFF;
-      background-color: #3498DB;
-      border-bottom: 5px solid #2980B9;
-  }
-  .clock-btn {
-    display: inline-block;
-    color: #FFF;
-    margin: 8px 0px 4px 0px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #333;
-    box-shadow: inset 5px 5px 15px rgba(150, 150, 150, .5), inset -5px -5px 15px rgba(0, 0, 0, .5), 3px 3px 5px rgba(0, 0, 0, .7);
-    -webkit-transition: box-shadow .15s;
-    -moz-transition: box-shadow .15s;
-    -ms-transition: box-shadow .15s;
-    transition: box-shadow .15s;
-    outline: none;
-    cursor: pointer;
-  }
-  .clock-time {
-    display: inline-block;
-    width: 50px;
-  }
-  
-  .timer{
-    position: relative;
-    padding: 5px;
-    margin: 10px;
-    color: #FFF;
-    background: #222222;
-    border-radius: 10px;
-      border-bottom: 5px solid #333;
-  }
-  #time-left {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 80px;
-    font-weight: 700;
-  }
-  .timer-btn {
-    width: 90px;
-    height: 30px;
-    border-radius: 40px;
-    margin: 10px;
-    color: #fff;
-    text-align: center;
-    background: #333;
-    box-shadow: inset 5px 5px 15px rgba(150, 150, 150, .5), inset -5px -5px 15px rgba(0, 0, 0, .5), 3px 3px 5px rgba(0, 0, 0, .7);
-    -webkit-transition: box-shadow .15s;
-    -moz-transition: box-shadow .15s;
-    -ms-transition: box-shadow .15s;
-    transition: box-shadow .15s;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  
-  @media screen and (max-width: 400px) {
-    #app {
-      transform: scale(0.8);
-      -webkit-transform: scale(0.8);
-      -moz-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-      -o-transform: scale(0.8);
-    }
-  }
-  @media screen and (max-width: 300px) {
-    #app {
-      transform: scale(0.6);
-      -webkit-transform: scale(0.6);
-      -moz-transform: scale(0.6);
-      -ms-transform: scale(0.6);
-      -o-transform: scale(0.6);
-    }
-  }
-  
-  
+}
