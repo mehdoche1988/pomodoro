@@ -67,7 +67,7 @@ function App() {
             setTimeLeft(sessionLength);
           }
         });
-      }, 10);
+      }, 1000);
       setIntervalId(newIntervalId);
     }
   };
