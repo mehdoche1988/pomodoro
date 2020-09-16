@@ -82,27 +82,25 @@ function App() {
 
   return (
     <div className="App">
+      <br></br>
       <Break
         breakLength={breakLength}
         decrementBreakLengthByOneMinute={decrementBreakLengthByOneMinute}
         incrementBreakLengthByOneMinute={incrementBreakLengthByOneMinute}
       />
-      <br/>
-      <button id="reset" onClick={handleResetButtonClick}>
-        Reset
-      </button>
       <TimeLeft
-        handleStartStopClick={handleStartStopClick}
         startStopButtonLabel={isStarted ? "Stop" : "Start"}
         timeLeft={timeLeft}
+        handleStartStopClick={handleStartStopClick}
       />
-
+      <button id="reset" className="clock-btn" onClick={handleResetButtonClick}>
+        Reset
+      </button>
       <Session
         sessionLength={sessionLength}
         decrementSessionLengthByOneMinute={decrementSessionLengthByOneMinute}
         incrementSessionLengthByOneMinute={incrementSessionLengthByOneMinute}
       />
-
       <audio id="beep" ref={audioElement}>
         <source
           src="https://onlineclock.net/audio/options/default.mp3"

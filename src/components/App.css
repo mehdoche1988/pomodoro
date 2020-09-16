@@ -5,7 +5,7 @@ body {
 }
 #app {
   display: flex;
-  height: 95vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -13,16 +13,17 @@ body {
 .title {
   color: black;
   margin-bottom: 10px;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 800;
 }
 
 .clock-control {
-  display: inline-block;
-  width: 150px;
-  margin: 10px;
+  /* display: inline-block; */
+  width: 350px;
+  height: 100px;
+  margin: 3px;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 42px;
   color: #fff;
   background-color: #3498db;
   border-bottom: 5px solid #2980b9;
@@ -30,12 +31,12 @@ body {
 .clock-btn {
   display: inline-block;
   color: #fff;
-  margin: 8px 0px 4px 0px;
-  width: 40px;
-  height: 40px;
+  /* margin: 0px 0px 4px 0px; */
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background-color: #333;
-  box-shadow: inset 5px 5px 15px rgba(150, 150, 150, 0.5),
+  background-color: rgb(202, 14, 14);
+  box-shadow: inset 5px 5px 15px rgba(150, 150, 150, 0.8),
     inset -5px -5px 15px rgba(0, 0, 0, 0.5), 3px 3px 5px rgba(0, 0, 0, 0.7);
   -webkit-transition: box-shadow 0.15s;
   -moz-transition: box-shadow 0.15s;
@@ -64,8 +65,8 @@ body {
   font-weight: 700;
 }
 .timer-btn {
-  width: 90px;
-  height: 30px;
+  width: 40px;
+  height: 50px;
   border-radius: 40px;
   margin: 10px;
   color: #fff;

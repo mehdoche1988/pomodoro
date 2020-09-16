@@ -7,11 +7,13 @@ momentDurationFormatSetup(moment);
 const TimeLeft = ({ handleStartStopClick, startStopButtonLabel, timeLeft }) => {
   const formattedTimeLeft = moment.duration(timeLeft, 's').format('mm:ss', { trim: false });
   return (
-    <div>
-      <p id="time-left">{formattedTimeLeft}</p>
-      <button id="start_stop" onClick={handleStartStopClick}>
+    <div >
+      <button id="start_stop" className="clock-btn" onClick={handleStartStopClick}>
         {startStopButtonLabel}
       </button>
+
+      <p id="time-left" className="clock-control">{formattedTimeLeft}</p>
+
     </div>
   );
 };
